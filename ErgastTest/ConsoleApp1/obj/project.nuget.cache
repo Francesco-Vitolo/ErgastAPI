@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "zUyyznHuMjlwInrNxDJV31Qn1qgDxIEe5jDb2OAfAIKueuTF3qua+Eii+kCLTLi1uwuEUr4+Iv+oG+izqr7RPw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Francesco\\Desktop\\vs-projects\\ErgastTest\\ConsoleApp1\\ConsoleApp1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Francesco\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\Francesco\\.nuget\\packages\\newtonsoft.json.schema\\3.0.14\\newtonsoft.json.schema.3.0.14.nupkg.sha512"
+  ],
+  "logs": []
+}
