@@ -1,5 +1,4 @@
-﻿using ErgastTest.Interfaces;
-using ErgastTest.Responses;
+﻿using ErgastTest.Responses;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;

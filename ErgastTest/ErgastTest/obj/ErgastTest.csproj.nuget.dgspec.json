@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Francesco\\Desktop\\vs-projects\\ErgastTest\\ErgastTest\\ErgastTest.csproj": {}
+    "C:\\Users\\Francesco\\Desktop\\ErgastAPI\\ErgastTest\\ErgastTest\\ErgastTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Francesco\\Desktop\\vs-projects\\ErgastTest\\ErgastTest\\ErgastTest.csproj": {
+    "C:\\Users\\Francesco\\Desktop\\ErgastAPI\\ErgastTest\\ErgastTest\\ErgastTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Francesco\\Desktop\\vs-projects\\ErgastTest\\ErgastTest\\ErgastTest.csproj",
+        "projectUniqueName": "C:\\Users\\Francesco\\Desktop\\ErgastAPI\\ErgastTest\\ErgastTest\\ErgastTest.csproj",
         "projectName": "ErgastTest",
-        "projectPath": "C:\\Users\\Francesco\\Desktop\\vs-projects\\ErgastTest\\ErgastTest\\ErgastTest.csproj",
+        "projectPath": "C:\\Users\\Francesco\\Desktop\\ErgastAPI\\ErgastTest\\ErgastTest\\ErgastTest.csproj",
         "packagesPath": "C:\\Users\\Francesco\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Francesco\\Desktop\\vs-projects\\ErgastTest\\ErgastTest\\obj\\",
+        "outputPath": "C:\\Users\\Francesco\\Desktop\\ErgastAPI\\ErgastTest\\ErgastTest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Francesco\\AppData\\Roaming\\NuGet\\NuGet.Config",

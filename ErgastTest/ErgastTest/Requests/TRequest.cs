@@ -1,5 +1,4 @@
 ﻿using ErgastTest.Core;
-using ErgastTest.Interfaces;
 using ErgastTest.Responses;
 using Newtonsoft.Json;
 using System;
@@ -10,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ErgastTest.Requests
 {
-    public abstract class TRequest : IDeserializeResponse
+    public abstract class TRequest
     {
         public string Url { get; set; }
 
