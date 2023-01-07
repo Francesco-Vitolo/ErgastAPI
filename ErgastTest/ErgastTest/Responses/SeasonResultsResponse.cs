@@ -1,4 +1,5 @@
 ﻿using ErgastTest.Models.MRData;
+using ErgastTest.Models.Tables;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;

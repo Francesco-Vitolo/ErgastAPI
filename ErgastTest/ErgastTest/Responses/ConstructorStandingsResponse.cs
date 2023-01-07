@@ -11,7 +11,7 @@ namespace ErgastTest.Responses
     public class ConstructorStandingsResponse : TResponse
     {
         [JsonProperty("MRData")]
-        public MRDataStandingsTable MRData { get; set; }
+        public MRDataConstructorStandingsTable MRData { get; set; }
 
         public override string ToString()
         {

@@ -1,0 +1,94 @@
+﻿using System;
+using System.Net.Http;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
+using ErgastTest.Models.Common;
+using ErgastTest.Models.MRData;
+using ErgastTest.Responses;
+using ErgastTest.Requests;
+
+namespace ErgastTest.Core
+{
+    public class ErgastClient : IErgastClient
+    {
+        private const string URL = Constants.BASE_URL;
+        private readonly HttpClient client;
+
+        public ErgastClient()
+        {
+            client = new HttpClient();
+        }
+
+        public async Task<TResponse> GetAsyncGeneric(TRequest request)
+        {
+            using (HttpResponseMessage response = await client.GetAsync(request))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    string? standings = await response.Content.ReadAsStringAsync();
+                    TResponse responseObj = request.Deserialize(standings);
+                    return responseObj;
+                }
+                else
+                {
+                    throw new Exception($"Error retrieving constructor standings ({response.ReasonPhrase})");
+                }
+            }
+        }
+
+
+        public async Task<ConstructorStandingsList> GetConstructorStandingsAsync(int year, int round)
+        {
+            string url = $"{URL}/{year}/{round}/constructorStandings.json";
+            using (HttpResponseMessage response = await client.GetAsync(url))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    string? standings = await response.Content.ReadAsStringAsync();
+                    ConstructorStandingsResponse responseObj = JsonConvert.DeserializeObject<ConstructorStandingsResponse>(standings);
+                    return responseObj.MRData.StandingsTable.StandingsLists[0];
+
+                }
+                else
+                {
+                    throw new Exception($"Error retrieving constructor standings ({response.ReasonPhrase})");
+                }
+            }
+        }
+       
+        public async Task<DriverStandingsList> GetDriverStandingsAsync(int year, int round)
+        {
+            string url = $"{URL}/{year}/driverStandings.json";
+            HttpResponseMessage response = await client.GetAsync(url);
+            if (response.IsSuccessStatusCode)
+            {
+                string? standings = response.Content.ReadAsStringAsync().Result;
+                DriverStandingsResponse rootObj = JsonConvert.DeserializeObject<DriverStandingsResponse>(standings);
+                return rootObj.MRData.StandingsTable.StandingsLists[0];
+            }
+            else
+            {
+                throw new Exception("Error retrieving driver standings");
+            }
+        }
+
+        public async Task<Race> GetSeasonResultsAsync(int year, int round)  //round optional machen
+        {
+            string url = $"{URL}/{year}/results.json";
+            using (HttpResponseMessage response = await client.GetAsync(url))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    string? standings = await response.Content.ReadAsStringAsync();
+                    SeasonResultsResponse responseObj = JsonConvert.DeserializeObject<SeasonResultsResponse>(standings);
+                    return responseObj.MRData.RaceTable.Races[0];
+                }
+                else
+                {
+                    throw new Exception($"Error retrieving constructor standings ({response.ReasonPhrase})");
+                }
+            }
+
+        }
+    }
+}

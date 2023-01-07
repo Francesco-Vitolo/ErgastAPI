@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TTch2nXzVLEuucDul8kAWijjQ+YfnJK66074D7H3kvWJjycIbp6PbvsvLGKhrFfJmeyC742JBmTFphYA0NXQSQ==",
+  "dgSpecHash": "fMmVMiFw80P3SlhzBZMDtDu4T7+bwqA0GAGV3qX1EyeWb6y8G7uaS9vJRK13tjF6lECdrr4lbMKm0WmLLsv0Cg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Francesco\\Desktop\\ErgastAPI\\ErgastTest\\ErgastTest\\ErgastTest.csproj",
+  "projectFilePath": "C:\\Users\\Francesco\\Desktop\\vs-projects\\ErgastAPI\\ErgastTest\\ErgastTest\\ErgastTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Francesco\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
   ],

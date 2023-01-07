@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Gz/ZRsX0p5dTf2vYHgP1QWKf9AZtrjITin5qQMAE6TCdKHtP9IPhAMHO0NofgoKy42ZKzTzsmgSXy9dOGazt4w==",
+  "dgSpecHash": "rhgnT3+BNGwj8X2GKVzcQhz2SR8HD5BiREuf4TcNcFFBLEIIuQm6/RP+FpfHsimsbCVHXGSpGEFgOA1RvzL8LA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Francesco\\Desktop\\ErgastAPI\\ErgastTest\\ConsoleApp1\\ConsoleApp1.csproj",
+  "projectFilePath": "C:\\Users\\Francesco\\Desktop\\vs-projects\\ErgastAPI\\ErgastTest\\ConsoleApp1\\ErgastConsoleApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Francesco\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\Francesco\\.nuget\\packages\\newtonsoft.json.schema\\3.0.14\\newtonsoft.json.schema.3.0.14.nupkg.sha512"
