@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ErgastApiHandler\ErgastApiHandler.csproj" />
     <ProjectReference Include="..\ErgastTest\ErgastApiHandler.csproj" />
   </ItemGroup>
 
