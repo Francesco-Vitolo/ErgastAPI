@@ -23,17 +23,17 @@
           "lib/netstandard2.0/Newtonsoft.Json.Schema.dll": {}
         }
       },
-      "ErgastTest/1.0.0": {
+      "ErgastApiHandler/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Newtonsoft.Json": "12.0.3"
         },
         "compile": {
-          "bin/placeholder/ErgastTest.dll": {}
+          "bin/placeholder/ErgastApiHandler.dll": {}
         },
         "runtime": {
-          "bin/placeholder/ErgastTest.dll": {}
+          "bin/placeholder/ErgastApiHandler.dll": {}
         }
       }
     }
@@ -93,15 +93,15 @@
         "packageIcon.png"
       ]
     },
-    "ErgastTest/1.0.0": {
+    "ErgastApiHandler/1.0.0": {
       "type": "project",
-      "path": "../ErgastTest/ErgastTest.csproj",
-      "msbuildProject": "../ErgastTest/ErgastTest.csproj"
+      "path": "../ErgastTest/ErgastApiHandler.csproj",
+      "msbuildProject": "../ErgastTest/ErgastApiHandler.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "ErgastTest >= 1.0.0",
+      "ErgastApiHandler >= 1.0.0",
       "Newtonsoft.Json.Schema >= 3.0.14"
     ]
   },
@@ -132,8 +132,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Francesco\\Desktop\\vs-projects\\ErgastAPI\\ErgastTest\\ErgastTest\\ErgastTest.csproj": {
-              "projectPath": "C:\\Users\\Francesco\\Desktop\\vs-projects\\ErgastAPI\\ErgastTest\\ErgastTest\\ErgastTest.csproj"
+            "C:\\Users\\Francesco\\Desktop\\vs-projects\\ErgastAPI\\ErgastTest\\ErgastTest\\ErgastApiHandler.csproj": {
+              "projectPath": "C:\\Users\\Francesco\\Desktop\\vs-projects\\ErgastAPI\\ErgastTest\\ErgastTest\\ErgastApiHandler.csproj"
             }
           }
         }

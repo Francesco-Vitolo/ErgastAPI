@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ErgastTest.Responses
+namespace ErgastApiHandler.Responses
 {
-    public abstract class TResponse
+    public interface TResponse
     {
+        public bool IsValid();
     }
 }

@@ -1,11 +1,11 @@
-﻿using ErgastTest.Requests;
+﻿using ErgastApiHandler.Requests;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ErgastTest.Core
+namespace ErgastApiHandler.Core
 {
     static class GetAsyncExtension
     {

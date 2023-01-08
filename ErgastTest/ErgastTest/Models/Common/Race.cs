@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ErgastTest.Models.Common
+namespace ErgastApiHandler.Models.Common
 {
     public class Race
     {
@@ -20,7 +20,7 @@ namespace ErgastTest.Models.Common
 
         public override string ToString()
         {
-            string raceInfos = $"{RaceName} - {Circuit}:";
+            string raceInfos = $"\n{RaceName} - {Circuit}:";
             foreach (RaceResult result  in Results)
             {
                 raceInfos += result;

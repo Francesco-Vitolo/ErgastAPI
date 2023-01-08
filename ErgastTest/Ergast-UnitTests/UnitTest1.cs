@@ -1,8 +1,8 @@
-using ErgastTest.Core;
-using ErgastTest;
-using ErgastTest.Responses;
-using ErgastTest.Requests;
-using ErgastTest.Models.Common;
+using ErgastApiHandler.Core;
+using ErgastApiHandler;
+using ErgastApiHandler.Responses;
+using ErgastApiHandler.Requests;
+using ErgastApiHandler.Models.Common;
 
 namespace Ergast_UnitTests
 {
@@ -14,21 +14,29 @@ namespace Ergast_UnitTests
         [TestMethod]
         public void GetAsyncGeneric_ConstructorStandingsRequest()
         {
-            TResponse response = client.GetAsyncGeneric(new ConstructorStandingsRequest(2021, 5)).Result;
+            TResponse? response = client.GetAsyncGeneric(new ConstructorStandingsRequest(2021, 5)).Result;
             Assert.IsTrue(response.ToString().Contains("Mercedes"));
         }
 
         [TestMethod]
+        public void GetAsyncGeneric_IsNotValidResponse()
+        {
+            TResponse? response = client.GetAsyncGeneric(new ConstructorStandingsRequest(2025)).Result;
+            Assert.IsNull(response);
+        }
+
+
+        [TestMethod]
         public void GetAsyncGeneric_SeasonResultsRequest()
         {
-            TResponse response = client.GetAsyncGeneric(new SeasonResultsRequest(2021, 5)).Result;
+            TResponse? response = client.GetAsyncGeneric(new SeasonResultsRequest(2021, 5)).Result;
             Assert.IsTrue(response.ToString().ToLower().Contains("ham"));
         }
 
         [TestMethod]
         public void GetAsyncGeneric_DriverResultsRequest()
         {
-            TResponse response = client.GetAsyncGeneric(new DriverStandingsRequest(2004)).Result;
+            TResponse? response = client.GetAsyncGeneric(new DriverStandingsRequest(2004)).Result;
             Assert.IsTrue(response.ToString().ToLower().Contains("msc"));
         }
 

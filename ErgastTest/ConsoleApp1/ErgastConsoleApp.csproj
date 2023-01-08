@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ErgastTest\ErgastTest.csproj" />
+    <ProjectReference Include="..\ErgastTest\ErgastApiHandler.csproj" />
   </ItemGroup>
 
 </Project>

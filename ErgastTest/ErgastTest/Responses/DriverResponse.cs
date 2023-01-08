@@ -8,19 +8,25 @@ using System.Threading.Tasks;
 
 namespace ErgastApiHandler.Responses
 {
-    public class DriverStandingsResponse : TResponse
+    public class DriverResponse : TResponse
     {
         [JsonProperty("MRData")]
-        public MRDataDriverStandingsTable MRData { get; set; }
+        public MRDataRaceTable MRData { get; set; }
 
         public bool IsValid()
         {
-            return MRData.StandingsTable.StandingsLists.Count != 0;
+            return MRData.RaceTable.Races.Count != 0;
         }
 
         public override string ToString()
         {
-            return MRData.StandingsTable.StandingsLists[0].ToString();
+            string res = "";
+            foreach(var race in MRData.RaceTable.Races)
+            {
+                res +=  "\n" + race.ToString();
+            }
+            return res;
+            
         }
     }
 }

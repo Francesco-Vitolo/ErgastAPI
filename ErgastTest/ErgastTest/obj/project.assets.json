@@ -57,9 +57,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Francesco\\Desktop\\vs-projects\\ErgastAPI\\ErgastTest\\ErgastTest\\ErgastTest.csproj",
-      "projectName": "ErgastTest",
-      "projectPath": "C:\\Users\\Francesco\\Desktop\\vs-projects\\ErgastAPI\\ErgastTest\\ErgastTest\\ErgastTest.csproj",
+      "projectUniqueName": "C:\\Users\\Francesco\\Desktop\\vs-projects\\ErgastAPI\\ErgastTest\\ErgastTest\\ErgastApiHandler.csproj",
+      "projectName": "ErgastApiHandler",
+      "projectPath": "C:\\Users\\Francesco\\Desktop\\vs-projects\\ErgastAPI\\ErgastTest\\ErgastTest\\ErgastApiHandler.csproj",
       "packagesPath": "C:\\Users\\Francesco\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Francesco\\Desktop\\vs-projects\\ErgastAPI\\ErgastTest\\ErgastTest\\obj\\",
       "projectStyle": "PackageReference",

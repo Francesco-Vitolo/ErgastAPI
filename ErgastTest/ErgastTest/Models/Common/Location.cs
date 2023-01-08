@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ErgastTest.Models.Common
+namespace ErgastApiHandler.Models.Common
 {
     public class Location
     {

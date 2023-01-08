@@ -2,12 +2,12 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using ErgastTest.Models.Common;
-using ErgastTest.Models.MRData;
-using ErgastTest.Responses;
-using ErgastTest.Requests;
+using ErgastApiHandler.Models.Common;
+using ErgastApiHandler.Models.MRData;
+using ErgastApiHandler.Responses;
+using ErgastApiHandler.Requests;
 
-namespace ErgastTest.Core
+namespace ErgastApiHandler.Core
 {
     public class ErgastClient : IErgastClient
     {
@@ -19,15 +19,15 @@ namespace ErgastTest.Core
             client = new HttpClient();
         }
 
-        public async Task<TResponse> GetAsyncGeneric(TRequest request)
+        public async Task<TResponse?> GetAsyncGeneric(TRequest request)
         {
             using (HttpResponseMessage response = await client.GetAsync(request))
             {
                 if (response.IsSuccessStatusCode)
                 {
-                    string? standings = await response.Content.ReadAsStringAsync();
+                    string? standings = await response.Content.ReadAsStringAsync();                    
                     TResponse responseObj = request.Deserialize(standings);
-                    return responseObj;
+                    return responseObj.IsValid() ? responseObj : null;                   
                 }
                 else
                 {
@@ -72,7 +72,7 @@ namespace ErgastTest.Core
             }
         }
 
-        public async Task<Race> GetSeasonResultsAsync(int year, int round)  //round optional machen
+        public async Task<Race> GetSeasonResultsAsync(int year, int round)
         {
             string url = $"{URL}/{year}/results.json";
             using (HttpResponseMessage response = await client.GetAsync(url))

@@ -1,4 +1,4 @@
-﻿using ErgastTest.Models.MRData;
+﻿using ErgastApiHandler.Models.MRData;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -6,12 +6,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ErgastTest.Responses
+namespace ErgastApiHandler.Responses
 {
     public class ConstructorStandingsResponse : TResponse
     {
         [JsonProperty("MRData")]
         public MRDataConstructorStandingsTable MRData { get; set; }
+
+        public bool IsValid()
+        {
+            return MRData.StandingsTable.StandingsLists.Count != 0;
+        }
 
         public override string ToString()
         {

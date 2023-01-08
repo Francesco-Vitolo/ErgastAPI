@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ErgastTest", "ErgastTest\ErgastTest.csproj", "{FA03AF41-6049-4570-94C1-014E330F9E05}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ErgastApiHandler", "ErgastTest\ErgastApiHandler.csproj", "{FA03AF41-6049-4570-94C1-014E330F9E05}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ErgastConsoleApp", "ConsoleApp1\ErgastConsoleApp.csproj", "{A99A5F81-C0D3-4FD7-86DD-87425B0115DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ergast-UnitTests", "Ergast-UnitTests\Ergast-UnitTests.csproj", "{C30265B8-B517-4F6B-A6F5-D6C94699DABE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ergast-UnitTests", "Ergast-UnitTests\Ergast-UnitTests.csproj", "{C30265B8-B517-4F6B-A6F5-D6C94699DABE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

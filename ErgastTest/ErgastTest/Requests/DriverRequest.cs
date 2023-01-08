@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace ErgastApiHandler.Requests
 {
-    public class DriverStandingsRequest : TRequest
+    public class DriverRequest : TRequest
     {
-        public DriverStandingsRequest(int year, int round = 0) : base(year, round)
+        public DriverRequest(int year, string name, int round = 0) : base(year, round)
         {
-            Url += "/driverStandings.json";
+            Url += $"/drivers/{name}/results.json";
         }
 
         public override TResponse Deserialize(string json)
         {
-            return JsonConvert.DeserializeObject<DriverStandingsResponse>(json);
+            return JsonConvert.DeserializeObject<DriverResponse>(json);
         }
     }
 }
