@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ErgastApiHandler.Responses
 {
-    public class SeasonResultsResponse : TResponse
+    public class ResultsResponse : TResponse
     {
         [JsonProperty("MRData")]
         public MRDataRaceTable MRData { get; set; }

@@ -41,16 +41,23 @@ namespace Ergast_UnitTests
         }
 
         [TestMethod]
+        public void GetAsyncGeneric_QualifyinfResults()
+        {
+            TResponse? response = client.GetAsyncGeneric(new QualifyingRequest(2021, 4)).Result;
+            Assert.IsTrue(response.ToString().ToLower().Contains("q1"));
+        }
+
+        [TestMethod]
         public void GetConstructorStandings()
         {
             ConstructorStandingsList result = client.GetConstructorStandingsAsync(2021, 0).Result;
             Assert.IsNotNull(result.ConstructorStandings.FirstOrDefault(x => x.Constructor.Name.ToLower() == "mercedes"));
         }
-
+        [TestMethod]
         public void GetDriverStandings()
         {
             DriverStandingsList result = client.GetDriverStandingsAsync(2021, 0).Result;
             Assert.IsNotNull(result.DriverStandings.FirstOrDefault(x => x.Driver.PermanentNumber == 33));
-        }
+        }       
     }
 }

@@ -80,7 +80,7 @@ namespace ErgastApiHandler.Core
                 if (response.IsSuccessStatusCode)
                 {
                     string? standings = await response.Content.ReadAsStringAsync();
-                    SeasonResultsResponse responseObj = JsonConvert.DeserializeObject<SeasonResultsResponse>(standings);
+                    ResultsResponse responseObj = JsonConvert.DeserializeObject<ResultsResponse>(standings);
                     return responseObj.MRData.RaceTable.Races[0];
                 }
                 else

@@ -18,6 +18,9 @@ namespace ErgastApiHandler.Models.Common
         [JsonProperty("Results")]
         public List<RaceResult> Results { get; set; }
 
+        [JsonProperty("QualifyingResults")]
+        private List<RaceResult> QualifyingResults { set { Results = value; } }
+
         public override string ToString()
         {
             string raceInfos = $"\n{RaceName} - {Circuit}:";
