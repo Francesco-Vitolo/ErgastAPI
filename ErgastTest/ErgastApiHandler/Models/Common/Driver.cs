@@ -13,10 +13,10 @@ namespace ErgastApiHandler.Models.Common
         public string DriverId { get; set; }
 
         [JsonProperty("permanentNumber")]
-        public int PermanentNumber { get; set; }
+        public int? PermanentNumber { get; set; }
 
         [JsonProperty("code")]
-        public string Code { get; set; }
+        public string? Code { get; set; } = "/";
 
         [JsonProperty("url")]
         public string Url { get; set; }
@@ -35,7 +35,7 @@ namespace ErgastApiHandler.Models.Common
 
         public override string ToString()
         {
-            return $"{PermanentNumber} {Code}";
+            return $"{PermanentNumber} {GivenName} {FamilyName} ({Code})";
         }
     }
 }

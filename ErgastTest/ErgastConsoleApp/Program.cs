@@ -14,22 +14,23 @@ namespace ErgastConsoleApp
         {
             ErgastClient client = new ErgastClient();
 
-            //TResponse? response = client.GetAsyncGeneric(new SeasonResultsRequest(2021, 5)).Result;
-            //Console.WriteLine(response);
-            //TResponse? response2 = client.GetAsyncGeneric(new SeasonResultsRequest(2024)).Result;
-            //TResponse? response3 = client.GetAsyncGeneric(new DriverRequest(2021,"alonso")).Result;
-            //Console.WriteLine(response3);
+            TResponse? response1 = client.GetAsyncGeneric(new RaceResultRequest(2021,5)).Result;
+            TResponse? response2 = client.GetAsyncGeneric(new QualifyingRequest(2021, 4)).Result;
+            TResponse? response3 = client.GetAsyncGeneric(new SprintQualifyingRequest(2021)).Result;
 
-            //TResponse? response4 = client.GetAsyncGeneric(new ConstructorRequest(2025, "mercedes")).Result;
-            //Console.WriteLine(response4);
-            //TResponse? response3 = client.GetAsyncGeneric(new ConstructorStandingsRequest(2021, 5)).Result;
-            TResponse? response4 = client.GetAsyncGeneric(new ConstructorStandingsRequest(2021)).Result;
+            TResponse? response4 = client.GetAsyncGeneric(new DriverRequest(2021,"alonso")).Result;
+            TResponse? response5 = client.GetAsyncGeneric(new DriverStandingsRequest(2022, 6)).Result;
+            Console.WriteLine(response5);
+            TResponse? response6 = client.GetAsyncGeneric(new ConstructorRequest(2025, "mercedes")).Result;
+            TResponse? response7 = client.GetAsyncGeneric(new ConstructorStandingsRequest(2021, 5)).Result;
 
-            //TResponse? response5 = client.GetAsyncGeneric(new DriverStandingsRequest(2022, 6)).Result;
-            TResponse? response6 = client.GetAsyncGeneric(new DriverStandingsRequest(2014)).Result;
+            TResponse? response8 = client.GetAsyncGeneric(new DriverRequest("alonso",100,0)).Result;
+            TResponse? response9 = client.GetAsyncGeneric(new ConstructorRequest("ferrari",100,0)).Result;
+            //TResponse? response10 = client.GetAsyncGeneric(new ConstructorRequest(100,0)).Result;
+            TResponse? response11 = client.GetAsyncGeneric(new AllDriversRequest(50,0)).Result;
+            Console.WriteLine(response11);
 
-            TResponse? response7 = client.GetAsyncGeneric(new QualifyingRequest(2021,4)).Result;
-            Console.WriteLine(response4);
+
         }
     }
 }

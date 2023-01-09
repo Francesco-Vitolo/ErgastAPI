@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace ErgastApiHandler.Requests
 {
-    public class RaceResultRequest : TRequest
+    public class SprintQualifyingRequest : TRequest
     {
-        public RaceResultRequest(int year, int round = 0) : base(year, round)
+        public SprintQualifyingRequest(int year, int round = 0) : base(year, round)
         {
-            Url += "/results.json";
+            Url += "/sprint.json";
         }
 
         public override TResponse Deserialize(string json)

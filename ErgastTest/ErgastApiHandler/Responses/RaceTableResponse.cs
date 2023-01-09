@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ErgastApiHandler.Responses
 {
-    public class DriverResponse : TResponse
+    public class RaceTableResponse : TResponse
     {
         [JsonProperty("MRData")]
         public MRDataRaceTable MRData { get; set; }

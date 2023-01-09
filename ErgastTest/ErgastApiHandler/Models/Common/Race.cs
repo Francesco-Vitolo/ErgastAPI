@@ -16,18 +16,24 @@ namespace ErgastApiHandler.Models.Common
         public Circuit Circuit { get; set; }
 
         [JsonProperty("Results")]
-        public List<RaceResult> Results { get; set; }
+        public List<RaceResult>? Results { get; set; }
 
         [JsonProperty("QualifyingResults")]
-        private List<RaceResult> QualifyingResults { set { Results = value; } }
+        private List<RaceResult>? QualifyingResults { set { Results = value; } }
+
+        [JsonProperty("SprintResults")]
+        private List<RaceResult>? SprintResults { set { Results = value; } }
 
         public override string ToString()
         {
             string raceInfos = $"\n{RaceName} - {Circuit}:";
-            foreach (RaceResult result  in Results)
+            if (Results is not null)
             {
-                raceInfos += result;
-            }
+                foreach (RaceResult result in Results)
+                {
+                    raceInfos += result;
+                }
+            }           
             return raceInfos;
         }
     }
