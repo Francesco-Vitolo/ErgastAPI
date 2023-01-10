@@ -10,10 +10,6 @@ namespace ErgastApiHandler.Requests
 {
     public class ConstructorRequest : TRequest
     {
-        public ConstructorRequest(int limit, int offset) : base()
-        {
-            Url += $"/constructors.json?limit={limit}&offset={offset}";
-        }
         public ConstructorRequest(string name, int limit, int offset) : base()
         {
             Url += $"/constructors/{name}/results.json?limit={limit}&offset={offset}";

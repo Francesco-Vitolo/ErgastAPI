@@ -28,7 +28,8 @@ namespace ErgastConsoleApp
             TResponse? response9 = client.GetAsyncGeneric(new ConstructorRequest("ferrari",100,0)).Result;
             //TResponse? response10 = client.GetAsyncGeneric(new ConstructorRequest(100,0)).Result;
             TResponse? response11 = client.GetAsyncGeneric(new AllDriversRequest(50,0)).Result;
-            Console.WriteLine(response11);
+            TResponse? response12 = client.GetAsyncGeneric(new AllConstructorsRequest(50,0)).Result;
+            Console.WriteLine(response12);
 
 
         }
