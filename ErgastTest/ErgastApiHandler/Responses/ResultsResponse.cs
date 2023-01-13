@@ -1,4 +1,5 @@
-﻿using ErgastApiHandler.Models.MRData;
+﻿using ErgastApiHandler.Models.Common;
+using ErgastApiHandler.Models.MRData;
 using ErgastApiHandler.Models.Tables;
 using Newtonsoft.Json;
 using System;
@@ -13,6 +14,8 @@ namespace ErgastApiHandler.Responses
     {
         [JsonProperty("MRData")]
         public MRDataRaceTable MRData { get; set; }
+
+        public Race Values => MRData.RaceTable.Races[0];
 
         public bool IsValid()
         {

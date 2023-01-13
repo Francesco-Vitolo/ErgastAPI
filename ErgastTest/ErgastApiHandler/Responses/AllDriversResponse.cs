@@ -1,4 +1,5 @@
-﻿using ErgastApiHandler.Models.MRData;
+﻿using ErgastApiHandler.Models.Common;
+using ErgastApiHandler.Models.MRData;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,8 @@ namespace ErgastApiHandler.Responses
     {
         [JsonProperty("MRData")]
         public MRDataDriverTable MRData { get; set; }
+
+        public List<Driver> Values => MRData.DriverTable.Drivers;
 
         public bool IsValid()
         {

@@ -11,7 +11,7 @@ namespace ErgastApiHandler.Core
 {
     public interface IErgastClient
     {
-        public Task<TResponse?> GetAsyncGeneric(TRequest request);
+        //public Task<TResponse> GetAsyncGeneric(TRequest request);
         //public Task<ConstructorStandingsResponse> GetConstructorStandingsAsync(int year, int round);
         //public Task<DriverStandingsResponse> GetDriverStandingsAsync(int year, int round);
         //public Task<Race> GetSeasonResultsAsync(int year, int round);

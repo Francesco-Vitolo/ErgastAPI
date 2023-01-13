@@ -16,6 +16,8 @@ namespace ErgastApiHandler.Responses
         [JsonProperty("MRData")]
         private MRDataConstructorStandingsTable MRData { get; set; }
 
+        public ConstructorStandingsList Values => MRData.StandingsTable.StandingsLists[0];
+
         public bool IsValid()
         {
             return MRData.StandingsTable.StandingsLists.Count != 0;

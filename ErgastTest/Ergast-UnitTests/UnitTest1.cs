@@ -9,54 +9,48 @@ namespace Ergast_UnitTests
     [TestClass]
     public class UnitTest1
     {
-        IErgastClient client = new ErgastClient();
+        ErgastClient client = new ErgastClient();
 
         [TestMethod]
         public void GetAsyncGeneric_ConstructorStandingsRequest()
         {
-            TResponse? response = client.GetAsyncGeneric(new ConstructorStandingsRequest(2021, 5)).Result;
-            Assert.IsTrue(response?.ToString()?.ToLower().Contains("Mercedes"));
-        }        
+            ConstructorStandingsResponse response = client.GetAsyncGeneric<ConstructorStandingsResponse>(new ConstructorStandingsRequest(2021, 5)).Result;
+            Assert.IsTrue(response.Values.ConstructorStandings[0].Constructor is not null);
+        }
 
         [TestMethod]
-        public void GetAsyncGeneric_SeasonResultsRequest()
+        public void GetAsyncGeneric_RaceResultRequest()
         {
-            TResponse? response = client.GetAsyncGeneric(new RaceResultRequest(2021, 5)).Result;
-            Assert.IsTrue(response?.ToString()?.ToLower().Contains("ham"));
+            var response = client.GetAsyncGeneric<ResultsResponse>(new RaceResultRequest(2021, 5)).Result;
+            StringAssert.Contains(response.Values.RaceName.ToLower(), "monaco");
         }
 
         [TestMethod]
         public void GetAsyncGeneric_DriverResultsRequest()
         {
-            TResponse? response = client.GetAsyncGeneric(new DriverStandingsRequest(2004)).Result;
-            Assert.IsTrue(response?.ToString()?.ToLower().Contains("msc"));
+            var response = client.GetAsyncGeneric<RaceTableResponse>(new DriverRequest("alonso",2021, 2)).Result;
+            StringAssert.Equals(response.Values[0].Results[0].Driver.Code.ToLower(), "alo");
         }
 
         [TestMethod]
         public void GetAsyncGeneric_QualifyingResults()
         {
-            TResponse? response = client.GetAsyncGeneric(new QualifyingRequest(2021, 4)).Result;
-            Assert.IsTrue(response?.ToString()?.ToLower().Contains("q1"));
+            var response = client.GetAsyncGeneric<ResultsResponse>(new QualifyingResultRequest(2021, 2)).Result;
+            Assert.IsTrue(response.Values.Results[0].Q1 is not null);
         }
 
         [TestMethod]
-        public void GetAsyncGeneric_IsNotValidResponse()
+        public void GetAsyncGeneric_AllConstructorsRequest()
         {
-            TResponse? response = client.GetAsyncGeneric(new ConstructorStandingsRequest(2025)).Result;
-            Assert.IsNull(response);
+            var response = client.GetAsyncGeneric<AllConstructorsResponse>(new AllConstructorsRequest(30,30)).Result;
+            Assert.IsTrue(response.Values.Count > 10);
         }
-        //Non Generic
-        //[TestMethod]
-        //public void GetConstructorStandings()
-        //{
-        //    ConstructorStandingsList result = client.GetConstructorStandingsAsync(2021, 0).Result;
-        //    Assert.IsNotNull(result.ConstructorStandings.FirstOrDefault(x => x.Constructor.Name.ToLower() == "mercedes"));
-        //}
-        //[TestMethod]
-        //public void GetDriverStandings()
-        //{
-        //    DriverStandingsList result = client.GetDriverStandingsAsync(2021, 0).Result;
-        //    Assert.IsNotNull(result.DriverStandings.FirstOrDefault(x => x.Driver.PermanentNumber == 33));
-        //}       
+
+        [TestMethod]
+        public void GetAsyncGeneric_AllDriversRequest()
+        {
+            var response = client.GetAsyncGeneric<AllDriversResponse>(new AllDriversRequest(30, 30)).Result;
+            Assert.IsTrue(response.Values.Count > 10);
+        }
     }
 }

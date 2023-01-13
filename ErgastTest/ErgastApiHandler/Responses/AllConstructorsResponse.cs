@@ -1,4 +1,5 @@
-﻿using ErgastApiHandler.Models.MRData;
+﻿using ErgastApiHandler.Models.Common;
+using ErgastApiHandler.Models.MRData;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,8 @@ namespace ErgastApiHandler.Responses
     {
         [JsonProperty("MRData")]
         public MRDataConstructorTable MRData { get; set; }
+
+        public List<Constructor> Values => MRData.ConstructorTable.Constructors;
 
         public bool IsValid()
         {

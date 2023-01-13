@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace ErgastApiHandler.Requests
 {
-    public class QualifyingRequest : TRequest
+    public class QualifyingResultRequest : TRequest
     {
-        public QualifyingRequest(int year, int round = 0) : base(year, round)
+        public QualifyingResultRequest(int year, int round = 0) : base(year, round)
         {
             Url += "/qualifying.json";
         }
